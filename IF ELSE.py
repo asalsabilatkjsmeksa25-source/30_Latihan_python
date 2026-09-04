@@ -1,3 +1,6 @@
-while True:
-    x = int(input('Masukkan angka: '))
-    print(f'angka {x} adalah genap') if x % 2 == 0 else print(f'angka {x} adalah ganjil')
+nilai = int(input("Masukkan nilai: "))
+
+if nilai >= 75:
+    print("Kamu LULUS")
+else:
+    print("Kamu TIDAK LULUS")
