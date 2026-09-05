@@ -12,4 +12,4 @@ def cek_ganjil_genap():
         except ValueError:
             print("Input tidak valid! Harap masukkan angka bulat.")
 
-cek_ganjil_genap()
+
