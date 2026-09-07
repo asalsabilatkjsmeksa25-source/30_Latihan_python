@@ -1,8 +1,26 @@
-import sys
-import os
+def ganjil_genap(angka):
+    if angka % 2 == 0:
+        return "Genap"
+    else:
+        return "Ganjil"
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from ganjilgenap import cek_ganjil_genap
+def prima(angka):
+    if angka < 2:
+        return False
 
-cek_ganjil_genap()
+    for i in range(2, angka):
+        if angka % i == 0:
+            return False
+
+    return True
+
+
+angka = int(input("Masukkan bilangan: "))
+
+print("Bilangan:", ganjil_genap(angka))
+
+if prima(angka):
+    print("Bilangan Prima")
+else:
+    print("Bukan Bilangan Prima")
