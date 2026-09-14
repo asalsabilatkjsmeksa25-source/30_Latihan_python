@@ -1,60 +1,34 @@
-import Database
+from Database import buat_database
 
-Database.buat_database()
+buat_database()
 
-def ganjil_genap(angka):
-    if angka % 2 == 0:
-        return "Genap"
+while True:
+    print("==============================")
+    print("       PROGRAM DATA ASA TKJ")
+    print("==============================")
+    print("1. Register")
+    print("2. Login")
+    print("3. Exit")
+
+    choice = input("Pilih menu (1/2/3): ")
+
+    if choice == "1":
+        username = input("Masukkan username: ")
+        password = input("Masukkan password: ")
+        print("Registrasi berhasil!")
+
+    elif choice == "2":
+        username = input("Masukkan username: ")
+        password = input("Masukkan password: ")
+        if username == "Asa" and password == "Asa123":
+            print("Login berhasil!")
+            break
+        else:
+            print("Username atau password salah!")
+
+    elif choice == "3":
+        print("Terima kasih! Program selesai.")
+        break
+
     else:
-        return "Ganjil"
-     
-print("==============================")
-print("       PROGRAM DATA ASA")
-print("==============================")
-
-nama = "Asa"
-angka = int(input("Masukkan angka: "))
-
-hasil = ganjil_genap(angka)
-
-print("\nHasil:")
-print("Nama  :", nama)
-print("Angka :", angka)
-print("Hasil :", hasil)
-
-Database.simpan_data(nama, angka, hasil)
-
-print("\nData berhasil disimpan!")
-
-pilihan = input("Apakah Anda ingin memasukkan angka lagi? (y/n): ")
-if pilihan.lower() == "y": 
-    def jalankan_program():
-        while True:
-            angka = int(input("Masukkan angka: "))
-            hasil = ganjil_genap(angka)
-            print(f"Hasil: {hasil}")
-            Database.simpan_data(nama, angka, hasil)
-            pilihan = input("Apakah Anda ingin memasukkan angka lagi? (y/n): ")
-            if pilihan.lower() != "y":
-                break
-else:
-    print("Terima kasih! Program selesai.")
-    
-print("\n=== DATA DATABASE ===")
-
-data = Database.tampilkan_data()
-
-for row in data:
-    print(row)
-
-
-
-def prima(angka):
-    if angka < 2:
-        return False
-
-    for i in range(2, angka):
-        if angka % i == 0:
-            return False
-
-    return True
+        print("Pilihan tidak valid. Silakan coba lagi.")
